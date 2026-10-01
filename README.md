@@ -162,3 +162,7 @@ llvm-cbe (a13fcf3, system LLVM 22.1, IR from rustc's LLVM 21):
 - rv51: https://github.com/cyrozap/rv51
 - i8051, an 8051 emulator in Rust, usable for tests: https://github.com/mmastrac/i8051
 - Embedonomicon on compiler support: https://docs.rust-embedded.org/embedonomicon/compiler-support.html
+
+## License
+
+Licensed under either of [Apache License, Version 2.0](LICENSE-APACHE) or [MIT license](LICENSE-MIT) at your option.
