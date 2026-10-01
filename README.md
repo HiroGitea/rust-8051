@@ -1,5 +1,7 @@
 # rust-8051: Rust on the 8051 (MCS-51)
 
+English | [中文](doc/README.zh-CN.md) | [日本語](doc/README.ja.md)
+
 Goal: write feature modules for [RTLPlayground](https://github.com/logicog/RTLPlayground), the 8051 firmware of
 RTL8372/RTL8373 switches, in Rust and link them with the existing C code.
 
