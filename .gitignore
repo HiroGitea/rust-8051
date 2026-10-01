@@ -1,0 +1,9 @@
+# Local state from setup.sh, not for git
+.installed
+env.sh
+rust-toolchain.pinned
+third_party/
+setup.log
+
+# Local notes for the next session, not published
+HANDOFF.md

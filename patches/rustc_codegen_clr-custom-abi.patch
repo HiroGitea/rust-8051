@@ -1,0 +1,23 @@
+diff --git i/rustc_codegen_clr_call/src/lib.rs w/rustc_codegen_clr_call/src/lib.rs
+index da5d474..a87ede6 100644
+--- i/rustc_codegen_clr_call/src/lib.rs
++++ w/rustc_codegen_clr_call/src/lib.rs
+@@ -32,6 +32,8 @@ impl CallInfo {
+             CanonAbi::C | CanonAbi::Rust => (),
+             // TODO: check this is 100% correct!
+             CanonAbi::X86(_) => (),
++            // naked asm functions in compiler_builtins (rust-8051 local patch)
++            CanonAbi::Custom => (),
+             _ => panic!("ERROR:calling using convention {conv:?} is not supported!"),
+         }
+         //assert!(!fn_abi.c_variadic);
+@@ -59,7 +61,8 @@ impl CallInfo {
+             | TargetAbi::Rust
+             | TargetAbi::RustCold
+             | TargetAbi::Unadjusted
+-            | TargetAbi::SysV64 { unwind: _ } => false,
++            | TargetAbi::SysV64 { unwind: _ }
++            | TargetAbi::Custom => false,
+ 
+             TargetAbi::RustCall => true, /*Err(CodegenError::FunctionABIUnsuported(
+             "\"rust_call\" ABI, used for things like clsoures, is not supported yet!",
